@@ -8,8 +8,8 @@ const UserProfile = ({id, status, name, imgUrl, thumbs={}, onReaction, like}) =>
 
     let up = 0, down = 0
     Object.values(thumbs).forEach((val)=>{
-        if (val==1) up ++
-        else if (val==0) down ++
+        if (val===1) up ++
+        else if (val===0) down ++
     })
 
     return <div className='user-profile'>
@@ -21,8 +21,8 @@ const UserProfile = ({id, status, name, imgUrl, thumbs={}, onReaction, like}) =>
             </div>
         </div>
         <div className='thumbs'>
-            <span className={`up ${like == 1 ? 'active' : ''}`} onClick={onThumbsUp}> <span>&#128077;</span> { up }</span>
-            <span className={`up ${like == 0 ? 'active' : ''}`} onClick={onThumbsDown}><span>&#128078;</span> { down }</span>
+            <span className={`up ${like === 1 ? 'active' : ''}`} onClick={onThumbsUp}> <span>&#128077;</span> { up }</span>
+            <span className={`up ${like === 0 ? 'active' : ''}`} onClick={onThumbsDown}><span>&#128078;</span> { down }</span>
         </div>
     </div>
 }

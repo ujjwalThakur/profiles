@@ -20,7 +20,7 @@ function App() {
   const onReaction = (key, payload) => {
     const uid = auth.currentUser.uid
     if (profiles[key].thumbs && uid in profiles[key].thumbs) {
-      if (profiles[key].thumbs[uid] == payload) 
+      if (profiles[key].thumbs[uid] === payload) 
         return updateThumbs(key, -1)
       else return updateThumbs(key, payload)
     }
