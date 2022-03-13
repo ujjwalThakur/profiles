@@ -1,0 +1,9 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+}
+.login-container div {
+  border: 1px solid #000;
+  padding: 10px;
+  margin: 10px auto;
+}

@@ -1,0 +1,45 @@
+.user-profile {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #000;
+}
+.user-profile .intro {
+  display: flex;
+}
+.user-profile .intro div {
+  padding: 10px;
+}
+.user-profile .thumbs {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.user-profile .up,
+.user-profile .down {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.user-profile img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.user-profile .intro .name {
+  font-family: monospace;
+  font-size: 28px;
+  font-weight: bolder;
+}
+.user-profile .intro .status {
+  font-family: cursive;
+}
+
+.active {
+  background-color: skyblue;
+}
