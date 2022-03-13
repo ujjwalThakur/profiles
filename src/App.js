@@ -41,7 +41,6 @@ function App() {
       setUser({ uid: uid, ...data[uid] })
       setStatus(data[uid].status ? data[uid].status : '')
       delete data[uid]
-      console.log(data)
       setProfiles(data)
     })
   }, [])
@@ -60,6 +59,8 @@ function App() {
         name: displayName,
         uid
       })
+
+
     })
   }, [])
 
@@ -78,7 +79,17 @@ function App() {
             status: defaultStatus,
             thumbs: {}
           })
-        } 
+        }
+        else {
+          get(ref(db, '/users')).then(snapshot => {
+            const data = snapshot.val()
+            const uid = auth.currentUser.uid
+            setUser({ uid: uid, ...data[uid] })
+            setStatus(data[uid].status ? data[uid].status : '')
+            delete data[uid]
+            setProfiles(data)
+          })
+        }
       })
     })
     .catch((error) => {
@@ -125,6 +136,7 @@ function App() {
     })
     return profilesId
   }
+  
 
   const updateStatus = (event) => setStatus(event.target.value)
 
@@ -151,7 +163,7 @@ function App() {
                 }
               </div>
             </div>
-            <div className='logout-btn' onClick={()=>auth.signOut()}>Logout</div>
+            <div className='logout-btn' onClick={()=>{auth.signOut()}}>Logout</div>
           </div>
 
           {
