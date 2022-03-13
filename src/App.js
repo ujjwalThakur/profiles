@@ -141,7 +141,7 @@ function App() {
       {!user ? <Login onGoogleSignIn={onGoogleSignIn} onAnonymousSignIn={onAnonymousSignIn} /> :
         <div className='profile-page'>
           <div className='current-user'>
-            <img src={user.imgUrl ? user.imgUrl : defaultImgUrl} />
+            <img src={user.imgUrl ? user.imgUrl : defaultImgUrl} alt='profile'/>
             <div className='details'>
               <div className='name'>{user.name}</div>
               <div className='status'>

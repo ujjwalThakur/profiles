@@ -14,7 +14,7 @@ const UserProfile = ({id, status, name, imgUrl, thumbs={}, onReaction, like}) =>
 
     return <div className='user-profile'>
         <div className='intro'>
-            <img src={imgUrl} />
+            <img src={imgUrl} alt='profile'/>
             <div className='intro-text'>
                 <div className='name'>{name}</div>
                 <div className='status'>{status}</div>
